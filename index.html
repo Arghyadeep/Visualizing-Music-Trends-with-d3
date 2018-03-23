@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CMPS 263 Final Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">   
+    <style>
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #ACACE6;
+  border: 2px solid #766EC8;
+color: aliceblue;
+    
+}
+#background { 
+    background-color: lightgrey;
+    background-repeat: no-repeat;
+    color: black;
+    text-align: justify;
+    background-position: center; 
+    background-size: contain;
+}
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    
+}
+ * {
+    box-sizing: border-box;
+}
+        
+        
+ div.a {
+    text-align: center;
+}
+
+div.b {
+    text-align: left;
+}
+
+div.c {
+    text-align: right;
+}
+ 
+</style>
+    
+</head>
+<body >
+    <div class = "sticky"><h1><b><center><strong>Visualization of Music Trends Across the Globe in 2017</strong></center></b></h1> </div>
+    
+    <div id="report" class = "no-print"></div>
+    <div id="tooltip" class = "no-print"></div>
+    <div id="slider"></div>
+    <div id="map">
+    
+    <script type="text/javascript" src="http://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script type="text/javascript" src = "music.js">
+    
+    
+    </script>
+    
+    
+    <div id="background">
+                
+            <div class = "b">
+                <h3><b>Created by:</b></h3> 
+                <p>Arghyadeep Giri<br>email: argiri@ucsc.edu<br>
+                <a href="https://github.com/Arghyadeep/Visualizing-Music-Trends-with-d3" target="_blank">Github Link</a>
+                </p>
+
+                <h3><b>Designed for:</b></h3>
+                <p>CMPS 263 (Winter 2018) under the guidance of Prof. Suresh Lodha</p>
+                
+                <h3><b>About:</b></h3>
+                <p> Music Trends change over time and vary accross locations, but some Artists and tracks get so widespread that it gets viral for a certain period of time. By trend, this sort of viral nature is described which lasts for a short duration. Top 3 artists for every month for United States is displayed for the year 2017. And hence, top 3 artists of other regions in the world are compared to visualize what sort of impact they have made. The genre of the month suggests the current "viral" trend, which gets changed pretty fast with time. </p>
+                
+                <h3><b>A few mentionable observations:</b></h3>
+                <p>1.Rockstar Track By Post Malone was the most heard track in the United States for 3 straight months (OCT, NOV and DEC) in 2017. And the exact same trend was observed for Canada as well.
+                 <br>   
+                2.In March 2017 almost the entire South America along with Mexico was trending with Luis Fonsi's "Despacito" where as America, Canada, most of the nations of Europe and Australia was trending with Ed Sheeran's "Shape of You".
+                </p>
+                
+                <h3><b>User Guidelines:</b></h3>
+                
+                <p>1. Drag Slider to view Top 3 Artists for United States for a certain month.<br>
+                2. Hover over a region to view top artist for the month in that region.(All Regions were not available from the data. The data is collected from Spotify which has countries only where their services are active.)<br>
+                3. Click on a certain location to find Top 3 artists of that particular location.<br>
+                4. Click on United States to find out the "Genre of the Month".<br></p>
+            </div>
+
+            <div class="row">
+                <div class="column" style="background-color:#aaa;">
+                <h3>Files Submitted</h3>
+                <p>index.html<br>music.js<br>style.css<br>idCountry.csv<br>countries.geo.json<br>Artist.csv broken into 12 parts named 1.csv, 2.csv ... 12.csv<br><br><br></p>
+            </div>
+                
+            <div class="column" style="background-color:#bbb;">
+                <h3>Data Sources</h3>
+                <p><a href="http://www.whalereport.com/#/app/chart/spotify/us" target="_blank">visit whale report to access data(sign up required)</a><br><br>
+                <a href=https://www.billboard.com/charts/artist-100 target="_blank">visit billboard for top 100 artists data with time</a><br><br>
+                <a href=https://www.kaggle.com/caicell/spotify-chart-journey-to-top-song/data target="_blank">Spotify Data from Kaggle</a><br><br><br><br>
+                </p>
+            </div>
+            </div>
+                
+            <div class="row">
+            <div class="column" style="background-color:#aaa;">
+                <h3>Relevant Visualization Sources</h3>
+                <p><a href="https://www.musicmap.info/" target="_blank">visualization for music genre prevalence with time</a><br><br>
+                <a href="https://flowingdata.com/2017/08/07/music-preference-geography/" target="_blank">spatial data visualization</a><br><br>
+                <a href="https://sureshlodha.github.io/CMPS165_Fall2016_FinalProjects/ElectronicMusic/" target="_blank">Electronic Music Genre Visualization(CMPS 165 Fall 2016 Project)</a><br><br>
+                <a href="https://sureshlodha.github.io/CMPS165_Fall2016_FinalProjects/PopularMusicOver50Years/" target="_blank">Popular Music over 50 years visualization(CMPS 165 Fall 2016 Project)</a>
+                </p>
+            </div>
+                
+            <div class="column" style="background-color:#bbb;">
+            <h3>Code Sources</h3>
+            <p><a href="http://bl.ocks.org/wiesson/ef18dba71256d526eb42" target="_blank">Making regions of map glow with color using d3.</a><br><br>
+                <a href="http://bl.ocks.org/MaciejKus/61e9ff1591355b00c1c1caf31e76a668" target="_blank">Selecting region of a map with d3</a><br><br>
+                <a href="https://bl.ocks.org/mbostock/6452972" target="_blank">Code for d3 Slider</a><br><br>
+                <a href="http://bl.ocks.org/d3noob/a22c42db65eb00d4e369" target="_blank">Simple tooltip tutorial</a><br><br>
+                
+              </p>
+                </div>
+            </div>
+            </div>
+</body>
+</html>
